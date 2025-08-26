@@ -37,7 +37,7 @@ public class Main {
         }else if (HoJ.equalsIgnoreCase("json")) {
             System.out.println(json);
         }else{
-            System.out.println("Formato não reconhecido!");
+            System.out.println("Formato não reconhecido! Tente novamente.");
         }
 
 
