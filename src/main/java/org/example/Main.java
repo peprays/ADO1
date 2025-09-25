@@ -14,23 +14,9 @@ public class Main {
         System.out.println("Deseja seu codigo em html ou json? ");
         String HoJ = input.nextLine();
 
-        String html = "<html lang=\"pt-br\">\n" +
-                "  <head>\n" +
-                "    <title>Informações</title>\n" +
-                "    <meta charset=\"utf-8\">\n" +
-                "  </head>\n" +
-                "  <body>\n" +
-                "    <h2>Nome: </h2>\n" +
-                "    <p>" + nome + "</p>\n" +
-                "    <h2>Email: </h2>\n" +
-                "    <p>" + email + "</p>\n" +
-                "  </body>\n" +
-                "</html>";
+        String html = HTML(nome, email);
 
-        String json = "{\n" +
-                "\"Nome\": " + "\"" + nome + "\",\n" +
-                "\"Email\": " + "\"" + email + "\"\n" +
-                "}";
+        String json = JSON(HoJ, html);
 
         if (HoJ.equalsIgnoreCase("html")) {
             System.out.println(html);
@@ -39,7 +25,28 @@ public class Main {
         }else{
             System.out.println("Formato não reconhecido! Tente novamente.");
         }
+    }
 
-
+        private static String HTML (String nome,  String email) {
+            return "<html lang=\"pt-br\">\n" +
+                    "  <head>\n" +
+                    "    <title>Informações</title>\n" +
+                    "    <meta charset=\"utf-8\">\n" +
+                    "  </head>\n" +
+                    "  <body>\n" +
+                    "    <h2>Nome: </h2>\n" +
+                    "    <p>" + nome + "</p>\n" +
+                    "    <h2>Email: </h2>\n" +
+                    "    <p>" + email + "</p>\n" +
+                    "  </body>\n" +
+                    "</html>";
         }
+
+        private static String JSON (String nome,  String email) {
+            return "{\n" +
+                    "\"Nome\": " + "\"" + nome + "\",\n" +
+                    "\"Email\": " + "\"" + email + "\"\n" +
+                    "}";
+        }
+
     }
